@@ -282,18 +282,17 @@ The Java application communicates with Oracle using JDBC and the Oracle JDBC dri
 
 ## **🔌 Database Connection**
 
-The project uses an Oracle JDBC connection similar to:
+The project uses Oracle JDBC to connect to the Oracle Database.
 
-```java
-DriverManager.getConnection(
-    "jdbc:oracle:thin:@localhost:1521:orcl",
-    "username",
-    "password"
-);
-```
+The public GitHub version of DBConnection.java does not contain the actual database username or password. Placeholder values are used for security:
 
-The actual database credentials should be configured locally and should **not be uploaded to GitHub**.
+private static final String URL = "jdbc:oracle:thin:@localhost:1521:orcl";
+private static final String USERNAME = "YOUR_USERNAME";
+private static final String PASSWORD = "YOUR_PASSWORD";
 
+Before running the application locally, replace YOUR_USERNAME and YOUR_PASSWORD with valid Oracle Database credentials.
+
+**Security Note:** Actual database credentials are intentionally not included in this public repository.
 ---
 
 ## **🔄 Application Flow**
@@ -335,11 +334,11 @@ The actual database credentials should be configured locally and should **not be
 
 ## **🔐 Security Note**
 
-Database credentials are required for the application to connect to Oracle.
+Database credentials are required for the application to connect to Oracle Database.
 
-For security reasons, database usernames and passwords should not be committed to a public GitHub repository.
+For security reasons, the actual Oracle database username and password are not included in this public GitHub repository. The public DBConnection.java file uses placeholder values instead.
 
-Before uploading the project, replace any personal database credentials with placeholders or use a separate configuration method.
+Before running the application locally, configure the database connection with valid Oracle credentials.
 
 ---
 
