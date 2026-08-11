@@ -126,6 +126,22 @@ The program uses case-insensitive input handling, allowing inputs such as `Easy`
 
 The game uses an `ArrayList<String>` to maintain the history of completed rounds.
 
+---
+
+## **👨‍💻 Author**
+
+**Mubashir Hussain**
+
+BS Software Engineering Student
+
+Developed as part of the **OIBSIP Java Programming Internship**.
+
+---
+
+## **📄 License**
+
+This project was developed for educational and internship purposes.
+
 Round results can be displayed in the following format:
 
 ```text
