@@ -126,6 +126,13 @@ The program uses case-insensitive input handling, allowing inputs such as `Easy`
 
 The game uses an `ArrayList<String>` to maintain the history of completed rounds.
 
+Round results can be displayed in the following format:
+
+```text
+Round 1 - Guessed in 4 attempts
+Round 2 - Lost
+Round 3 - Guessed in 2 attempts
+
 ---
 
 ## **👨‍💻 Author**
@@ -141,10 +148,3 @@ Developed as part of the **OIBSIP Java Programming Internship**.
 ## **📄 License**
 
 This project was developed for educational and internship purposes.
-
-Round results can be displayed in the following format:
-
-```text
-Round 1 - Guessed in 4 attempts
-Round 2 - Lost
-Round 3 - Guessed in 2 attempts
