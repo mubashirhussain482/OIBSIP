@@ -271,22 +271,6 @@ The application checks:
 
 ---
 
-## **🏗️ Class Structure**
-
-The project contains five main classes:
-
-```text
-OIBSIP_Java_Task3.java
-│
-├── Account
-├── Transaction
-├── Bank
-├── ATM
-└── OIBSIP_Java_Task3
-```
-
----
-
 ## **📂 Class Description**
 
 ### **`Account`**
@@ -378,26 +362,14 @@ atm.start();
 ---
 
 ## **📁 Project Structure**
-
-The current implementation keeps the five classes in a single Java source file.
-
 ```text
-OIBSIP_Java_Task3/
-│
-├── OIBSIP_Java_Task3.java
-└── README.md
-```
-
-The source file contains:
-
-```text
-Account
-Transaction
-Bank
-ATM
 OIBSIP_Java_Task3
+├── Account.java
+├── Transaction.java
+├── Bank.java
+├── ATM.java
+└── OIBSIP_Java_Task3.java
 ```
-
 ---
 
 ## **🔄 Application Flow**
