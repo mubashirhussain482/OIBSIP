@@ -132,6 +132,7 @@ Round results can be displayed in the following format:
 Round 1 - Guessed in 4 attempts
 Round 2 - Lost
 Round 3 - Guessed in 2 attempts
+```
 
 ---
 
