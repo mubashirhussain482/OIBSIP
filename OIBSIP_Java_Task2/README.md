@@ -1,29 +1,18 @@
-## **Number Guessing Game**
+# **Number Guessing Game**
 
-A console-based Number Guessing Game developed in Java. The game allows users to select a difficulty level, guess a randomly generated number, receive higher/lower hints, track attempts, and play multiple rounds.
+A console-based Number Guessing Game developed in Java. The game generates a random number and allows the user to guess it within a limited number of attempts.
 
-This project was developed as **Task 2** of the **OIBSIP Java Programming Internship**.
+The project was developed as **Task 2** of the **OIBSIP Java Programming Internship**.
 
 ---
 
 ## **📌 Project Overview**
 
-The Number Guessing Game provides a simple interactive console-based gaming experience.
+The Number Guessing Game is a command-line application where the computer generates a random number and the user attempts to guess it.
 
-Users can:
+After each guess, the game provides a hint indicating whether the user's guess is lower or higher than the target number.
 
-- Select a game difficulty: Easy, Medium, or Hard
-- Generate a random number according to the selected difficulty
-- Enter guesses using the Scanner class
-- Receive "Your number is low" or "Your number is high" hints
-- Track the number of remaining attempts
-- Win the game by guessing the correct number
-- Lose the game when the maximum attempts are exhausted
-- View the correct number after losing
-- Play multiple rounds
-- Validate difficulty and Play Again input
-- Handle invalid numerical input using exception handling
-- Track round results using an ArrayList
+The game supports multiple rounds and provides a summary of the completed rounds when the game ends.
 
 ---
 
@@ -31,108 +20,324 @@ Users can:
 
 The main objectives of this project are:
 
-- Build a console-based game using Java
-- Implement random number generation
-- Provide different difficulty levels
-- Implement user input using Scanner
-- Provide higher/lower hints after each guess
-- Track attempts during each round
-- Implement a maximum attempt limit
-- Implement input validation
-- Handle invalid numerical input using InputMismatchException
-- Provide a Play Again option
-- Track results across multiple rounds using ArrayList
-- Apply Java programming concepts such as loops, conditions, switch statements, and exception handling
+* Generate random numbers using Java
+* Allow users to enter guesses through the console
+* Provide higher/lower hints
+* Track the number of attempts used
+* Limit the number of attempts per round
+* Allow the user to play multiple rounds
+* Maintain a history of completed rounds
+* Implement difficulty levels
+* Handle invalid user input
 
 ---
 
 ## **🛠️ Technologies Used**
 
-| Technology                 | Purpose                          |
-| -------------------------- | -------------------------------- |
-| Java                       | Application development          |
-| Scanner                    | User input                       |
-| Random                     | Random number generation         |
-| ArrayList                  | Round history tracking           |
-| InputMismatchException     | Invalid input handling           |
-| Switch Statement           | Difficulty selection             |
-| NetBeans IDE               | Development environment          |
-
----
-
-## **🎮 Difficulty Levels**
-
-The game provides three difficulty levels:
-
-| Difficulty | Number Range | Maximum Attempts |
-| ---------- | ------------ | ---------------- |
-| Easy       | 1–50         | 10               |
-| Medium     | 1–100        | 7                |
-| Hard       | 1–200        | 5                |
-
-The user can enter the difficulty as:
-
-- `easy`
-- `medium`
-- `hard`
-
-The program uses case-insensitive input handling, allowing inputs such as `Easy`, `EASY`, and `easy`.
+| Technology               | Purpose                  |
+| ------------------------ | ------------------------ |
+| Java                     | Application development  |
+| `Random`                 | Random number generation |
+| `Scanner`                | User input               |
+| `ArrayList`              | Round history storage    |
+| `InputMismatchException` | Invalid input handling   |
+| NetBeans IDE             | Development environment  |
 
 ---
 
 ## **✨ Features**
 
-- Random number generation for every round
-- Three difficulty levels
-- Difficulty-based number ranges
-- Difficulty-based maximum attempts
-- User guess input
-- "Your number is low" hint
-- "Your number is high" hint
-- Correct guess detection
-- Attempt tracking
-- Win and loss messages
-- Correct number revealed after losing
-- Play Again functionality
-- Multiple round support
-- Round history tracking
-- Input validation
-- Exception handling for invalid numerical input
+### **1. Difficulty Levels**
+
+The game provides three difficulty levels:
+
+| Difficulty | Number Range | Maximum Attempts |
+| ---------- | -----------: | ---------------: |
+| Easy       |         1–50 |               10 |
+| Medium     |        1–100 |                7 |
+| Hard       |        1–200 |                5 |
+
+The user selects the desired difficulty at the beginning of each round.
 
 ---
 
-## **🔄 Game Flow**
+### **2. Random Number Generation**
 
-1. Start the application.
-2. Display the difficulty selection.
-3. User selects Easy, Medium, or Hard.
-4. Generate a random target number according to the selected difficulty.
-5. Set the maximum attempts.
-6. Ask the user to enter a guess.
-7. Validate the entered guess.
-8. Compare the guess with the target number.
-9. Display a low or high hint if the guess is incorrect.
-10. Decrease the remaining attempts.
-11. Continue until the user guesses correctly or runs out of attempts.
-12. Display the result of the round.
-13. Store the round result.
-14. Ask the user whether they want to play again.
-15. Start a new round if the user enters Yes.
-16. End the game when the user enters No.
+At the beginning of every round, the program generates a random target number according to the selected difficulty.
 
----
-
-## **📊 Round Tracking**
-
-The game uses an `ArrayList<String>` to maintain the history of completed rounds.
-
-Round results can be displayed in the following format:
+Examples:
 
 ```text
-Round 1 - Guessed in 4 attempts
-Round 2 - Lost
-Round 3 - Guessed in 2 attempts
+Easy   → 1–50
+Medium → 1–100
+Hard   → 1–200
 ```
+
+Java's `Random` class is used for generating the target number.
+
+---
+
+### **3. Guessing and Hints**
+
+The user enters a numerical guess.
+
+The program provides feedback:
+
+* **Your number is low** — when the guess is lower than the target
+* **Your number is high** — when the guess is higher than the target
+* **You win the game** — when the guess is correct
+
+---
+
+### **4. Attempt Tracking**
+
+The game keeps track of the number of remaining attempts.
+
+The maximum attempts depend on the selected difficulty:
+
+* Easy → 10 attempts
+* Medium → 7 attempts
+* Hard → 5 attempts
+
+The remaining attempts are displayed during the game.
+
+---
+
+### **5. Losing a Round**
+
+If the user uses all available attempts without guessing the target number, the round ends.
+
+The program displays:
+
+```text
+You lose. Out of moves
+The number was [target number]
+```
+
+The result is then added to the round history.
+
+---
+
+### **6. Multiple Rounds**
+
+After completing a round, the user is asked:
+
+```text
+Do you want to play again (yes/no):
+```
+
+If the user enters `yes`, a new round begins with a newly generated random number.
+
+If the user enters `no`, the game ends.
+
+---
+
+### **7. Round History**
+
+The program stores the result of each completed round using an `ArrayList`.
+
+For successful rounds, the history records the round number and the number of attempts used.
+
+Example:
+
+```text
+----- Round Summary -----
+Round 1 - Guessed in 3 attempts out of 7
+Round 2 - Guessed in 5 attempts out of 10
+Round 3 - Lost
+```
+
+---
+
+### **8. Input Validation**
+
+The program handles invalid input using `InputMismatchException`.
+
+If the user enters something other than a number when a guess is required, the program displays:
+
+```text
+Invalid input. Please enter a number.
+```
+
+The difficulty selection is also validated. If an invalid difficulty is entered, the user is asked to select again.
+
+The Play Again option only accepts:
+
+```text
+yes
+```
+
+or
+
+```text
+no
+```
+
+---
+
+## **🏗️ Program Structure**
+
+```text
+OIBSIP_Java_Task2
+│
+├── OIBSIP_Java_Task2.java
+└── README.md
+```
+
+The project is implemented as a console-based Java application using a single main class.
+
+---
+
+## **🔄 Application Flow**
+
+```text
+              ┌──────────────────────┐
+              │      Start Game      │
+              └──────────┬───────────┘
+                         │
+                         ▼
+              ┌──────────────────────┐
+              │ Select Difficulty    │
+              │ Easy / Medium / Hard │
+              └──────────┬───────────┘
+                         │
+                         ▼
+              ┌──────────────────────┐
+              │ Generate Random      │
+              │ Target Number        │
+              └──────────┬───────────┘
+                         │
+                         ▼
+              ┌──────────────────────┐
+              │ Enter Guess          │
+              └──────────┬───────────┘
+                         │
+                 ┌───────┴────────┐
+                 │                │
+                 ▼                ▼
+          Guess Correct?       Incorrect
+                 │                │
+                 ▼                ▼
+              Win          High / Low Hint
+                 │                │
+                 │                ▼
+                 │         Attempts Remaining?
+                 │          │             │
+                 │         Yes            No
+                 │          │             │
+                 │          └──► Guess     ▼
+                 │                   Lose
+                 └──────────┬──────────────┘
+                            │
+                            ▼
+                    Play Again?
+                     │          │
+                    Yes         No
+                     │          │
+                     ▼          ▼
+                New Round    Game End
+                                │
+                                ▼
+                         Round Summary
+```
+
+---
+
+## **▶️ How to Run**
+
+### **Prerequisites**
+
+Make sure the following are installed:
+
+* Java JDK
+* NetBeans IDE or another Java IDE
+
+### **Steps**
+
+1. Clone or download the repository.
+
+2. Open the project in NetBeans.
+
+3. Open:
+
+```text
+OIBSIP_Java_Task2.java
+```
+
+4. Compile and run the program.
+
+5. Select a difficulty level:
+
+```text
+easy
+medium
+hard
+```
+
+6. Enter numerical guesses.
+
+7. Follow the hints and attempt counter.
+
+8. Choose whether to play another round after each game.
+
+---
+
+## **🧪 Testing**
+
+The game was tested for the following scenarios:
+
+### **Difficulty Testing**
+
+* Easy difficulty
+* Medium difficulty
+* Hard difficulty
+* Invalid difficulty input
+
+### **Guess Testing**
+
+* Correct guess
+* Guess lower than target
+* Guess higher than target
+* Invalid non-numeric input
+
+### **Attempt Testing**
+
+* Winning within the available attempts
+* Using all available attempts
+* Displaying the target number after losing
+
+### **Round Testing**
+
+* Playing multiple rounds
+* Selecting different difficulties in different rounds
+* Round history generation
+* Ending the game with `no`
+
+### **Play Again Testing**
+
+* Valid `yes` input
+* Valid `no` input
+* Invalid Play Again input
+
+---
+
+## **📚 Java Concepts Used**
+
+This project demonstrates the use of:
+
+* Variables and data types
+* `if-else` statements
+* `switch-case`
+* `while` loops
+* `do-while` loops
+* `Random`
+* `Scanner`
+* `ArrayList`
+* Exception handling
+* `InputMismatchException`
+* String handling
+* Boolean variables
+* Multiple rounds and state tracking
 
 ---
 
