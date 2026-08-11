@@ -384,6 +384,24 @@ The application starts from the login screen.
 
 ---
 
+## **🔑 Login Credentials**
+
+The application authenticates users against the `USERS` table in the Oracle database.
+
+The following sample accounts are available in the database:
+
+| Username | Password |
+| -------- | -------- |
+| admin    | 12345    |
+| mubashir | 804480   |
+| haider   | 021006   |
+
+These credentials are provided for testing and demonstration purposes.
+
+> **Note:** In a real-world application, passwords should not be stored as plain text. Password hashing should be used to protect user credentials.
+
+---
+
 ## **🧪 Testing**
 
 The application was tested for the following scenarios:
