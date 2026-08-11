@@ -20,8 +20,7 @@ This repository contains my projects and task submissions completed during my **
 Each task is organized in a separate folder for easy access and evaluation.
 
 ```text
-OIBSIP/
-│
+OIBSIP
 ├── Java-Task1-Online Reservation System
 ├── Java-Task2-Number Guessing Game
 ├── Java-Task3-ATM Interface
